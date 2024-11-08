@@ -1,8 +1,28 @@
 # Table of contents
 # Learn more at https://jupyterbook.org/customize/toc.html
 
+#format: jb-book
+#root: intro
+#chapters:
+#- file: chapters/notebooks
+#  sections:
+#  - file: chapters/01_education
+
 format: jb-book
 root: intro
-chapters:
-- file: notebooks
-
+parts:
+  - caption: Education
+    chapters:
+    - file: chapters/01_education
+    - file: chapters/02_education
+      sections:
+      - file: chapters/03_education
+  - caption: Experience
+    numbered: true
+    maxdepth: 2
+    chapters:
+    - file: chapters/04_education
+    - file: chapters/05_education
+      sections:
+        - file: chapters/06_education
+    
