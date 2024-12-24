@@ -1,23 +1,31 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: My sample book
-author: The Jupyter Book Community
-logo: logo.png
+title: Engineering with Mangroves
+author: Rik Gijsman
+copyright: "2024"
+logo: logo.jpg
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
   execute_notebooks: force
 
+launch_buttons:
+  colab_url: "https://colab.research.google.com"
+
 # Define the name of the latex output file for PDF builds
 latex:
   latex_documents:
-    targetname: book.tex
+    targetname: engineering_with_mangroves.tex
 
 # Add a bibtex file so that we can create citations
 bibtex_bibfiles:
   - references.bib
+
+sphinx:
+  config:
+    bibtex_reference_style: author_year
 
 # Information about where the book exists on the web
 repository:

@@ -1,28 +1,32 @@
 # Table of contents
 # Learn more at https://jupyterbook.org/customize/toc.html
 
-#format: jb-book
-#root: intro
-#chapters:
-#- file: chapters/notebooks
-#  sections:
-#  - file: chapters/01_education
-
 format: jb-book
 root: intro
 parts:
-  - caption: Education
+  - caption: Introduction & Overview
     chapters:
-    - file: chapters/01_education
-    - file: chapters/02_education
-      sections:
-      - file: chapters/03_education
-  - caption: Experience
-    numbered: true
-    maxdepth: 2
+      - file: chapters/0_1_author
+      - file: chapters/0_2_preface
+      - file: chapters/0_3_toc
+  - caption: Chapters
     chapters:
-    - file: chapters/04_education
-    - file: chapters/05_education
-      sections:
-        - file: chapters/06_education
-    
+      - file: chapters/01_introduction
+      - file: chapters/02_wave_attenuation
+      - file: chapters/03_surface_elevation_change
+      - file: chapters/04_forest_structure_change
+      - file: chapters/05_field_measurements
+      - file: chapters/06_remote_sensing
+      - file: chapters/07_numerical_models
+      - file: chapters/08_guidelines
+      - file: chapters/09_applications
+  - caption: Exercises
+    chapters:
+      - file: chapters/99_1_exercise1
+      - file: chapters/99_2_exercise2
+  - caption: References
+    chapters:
+      - file: chapters/99_99_references
+
+
+

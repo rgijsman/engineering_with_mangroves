@@ -1,6 +1,5 @@
-# Rik Gijsman
+# Homepage
 
-I made some more changes.
-Test.
-Test.
-Check out [the Jupyter Book documentation](https://jupyterbook.org) for more information.
+**Welcome to Engineering with Mangroves - Design Support for Coastal Engineering Assessments!**
+
+THIS WEBSITE IS CURRENTLY UNDER CONSTRUCTION!
