@@ -1,0 +1,535 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>01: Introduction &#8212; Engineering with Mangroves</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/01_introduction';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="02: Wave attenuation" href="02_wave_attenuation.html" />
+    <link rel="prev" title="Table of Contents" href="0_3_toc.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.jpg" class="logo__image only-light" alt="Engineering with Mangroves - Home"/>
+    <img src="../_static/logo.jpg" class="logo__image only-dark pst-js-only" alt="Engineering with Mangroves - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Homepage
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction &amp; Overview</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="0_1_author.html">Author</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0_2_preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0_3_toc.html">Table of Contents</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapters</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">01: Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_wave_attenuation.html">02: Wave attenuation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_surface_elevation_change.html">03: Surface elevation changes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_forest_structure_change.html">04: Forest structure changes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_field_measurements.html">05: Field Measurements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_remote_sensing.html">06: Remote Sensing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_numerical_models.html">07: Forest structure changes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_guidelines.html">08: Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_applications.html">09: Applications</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercises</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="99_1_exercise1.html">Exercise 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="99_2_exercise2.html">Exercise 2</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">References</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="99_99_references.html">References</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/executablebooks/jupyter-book/blob/master/docs/chapters/01_introduction.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapters/01_introduction.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/chapters/01_introduction.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>01: Introduction</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="introduction">
+<span id="ch01"></span><h1>01: Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h1>
+<p>Here is my citation <span id="id1">[<a class="reference internal" href="99_99_references.html#id2" title="Christopher Ramsay Holdgraf, Wendy de Heer, Brian N. Pasley, and Robert T. Knight. Evidence for Predictive Coding in Human Auditory Cortex. In International Conference on Cognitive Neuroscience. Brisbane, Australia, Australia, 2014. Frontiers in Neuroscience.">Holdgraf <em>et al.</em>, 2014</a>]</span>.</p>
+<p>Here are multiple citations <span id="id2">[<a class="reference internal" href="99_99_references.html#id2" title="Christopher Ramsay Holdgraf, Wendy de Heer, Brian N. Pasley, and Robert T. Knight. Evidence for Predictive Coding in Human Auditory Cortex. In International Conference on Cognitive Neuroscience. Brisbane, Australia, Australia, 2014. Frontiers in Neuroscience.">Holdgraf <em>et al.</em>, 2014</a>, <a class="reference internal" href="99_99_references.html#id3" title="Christopher Ramsay Holdgraf, Wendy de Heer, Brian N. Pasley, Jochem W. Rieger, Nathan Crone, Jack J. Lin, Robert T. Knight, and Frédéric E. Theunissen. Rapid tuning shifts in human auditory cortex enhance speech intelligibility. Nature Communications, 7(May):13654, 2016. URL: http://www.nature.com/doifinder/10.1038/ncomms13654, doi:10.1038/ncomms13654.">Holdgraf <em>et al.</em>, 2016</a>]</span>!</p>
+<p>Hundreds of millions of people are exposed to the risk of coastal flooding due to the compounding effects of tides, storms, tropical cyclones and tsunamis (Kulp and Strauss, 2019). This exposure is expected to increase with sea level rise (SLR) and the increasing frequency and intensity of tropical cyclones (Woodruff et al., 2013; Kirezci et al., 2020; Taherkhani et al., 2020). Rapid coastal population growth and urbanization is also increasing the vulnerability to, and consequences of, flood events, especially in the tropics (Neumann et al., 2015). Meanwhile, coastal wetland ecosystems that can reduce flood risk (Arkema et al., 2013; Van Coppenolle and Temmerman, 2020), are in rapid decline due to their exploitation and conversion for other land-use purposes. To reduce the flood risk exposure in low-elevation coastal zones, particularly in developing economies, it is critical to develop and implement sustainable and cost-effective solutions that reduce coastal flood risk.</p>
+<p>Mangrove forests can contribute to the reduction of coastal flood risk in low-elevation coastal zones (Hochard et al., 2019; Menéndez et al., 2020). Due to their presence, extent and characteristic above-ground aerial root systems, they can help reduce surge levels and attenuate wind waves. Moreover, mangroves can provide a variety of co-benefits to coastal communities and beyond, that are embedded in the United Nations Sustainable Development Goals (SDGs). Mangroves contribute to food provision (SDG-2) by providing an important habitat for fish and shellfish (Carrasquilla-Henao and Juanes, 2017); to economic development (SDG-8) by supporting ecotourism (Spalding and Parrett, 2019); and to climate action (SDG-13) by effectively sequestrating carbon (Ezcurra et al., 2016). As such, mangroves act as a broad Nature-based Solution (NbS) to both climate change adaptation and mitigation. Their application to reduce coastal flood risk is also increasingly supported worldwide through numerous initiatives that seek to incorporate coastal ecosystem protection and restoration into coastal engineering and management.</p>
+<p>There is increasing interest in the application of mangroves to contribute to flood risk reduction along with a range of engineering structures, in hybrid-engineering solutions (Sutton-Grier et al., 2015). To capitalize on this interest and successfully and effectively integrate mangroves in coastal flood risk management, we need to understand mangrove dynamics and thresholds, and the optimal conditions for mangroves to reduce flood risk. In particular, design and implementation guidelines will help understand how mangroves can be incorporated into broader flood risk reduction solutions. Guidelines translate scientific knowledge of mangrove dynamics into a language that stakeholders and users, such as engineers and decision makers, can work with, while providing insights in future research required to better incorporate mangroves in flood risk projects.</p>
+<p>Management (i.e., decision making) and engineering of projects to reduce coastal flood risk are typically executed in well-defined sequential processes. Firstly, the management process assesses the flood risk exposure of a coastal community and determines the necessity of flood protection infrastructure to prevent or mitigate flood events. Secondly, the engineering process concerns the design, construction and maintenance of this infrastructure. The infrastructure is initially designed to have functionality for flood risk reduction, that is of a sufficient capacity to avoid and/or mitigate the effects of flood events. The infrastructure must also have sufficient persistence, that is the capacity to maintain its functionality for a certain period of time. After implementation, regular monitoring is required to assess the infrastructure functionality over time. The monitoring requirement recognizes the large variability in geomorphological and socio-economic developments along shorelines. Furthermore, predictive models are typically used to explore effects of anticipated extreme conditions or environmental change on the functionality and persistence of the infrastructure. In case the infrastructure functionality cannot be guaranteed for the design life, then (additional) engineering interventions may need to be considered.</p>
+<p>Mangroves have a functional capacity to reduce coastal flood risk, but also have innate persistent capacities that traditional hard-engineering infrastructure is lacking (Gedan et al., 2011; Cheong et al., 2013; Temmerman et al., 2013; Bouma et al., 2014). The functionality of mangroves is provided by the structure of their above-ground biomass and aerial roots that dampens hydrodynamic flows and dissipates hydrodynamic energy of waves (Marois and Mitsch, 2015). Mangroves also have innate persistence due to their adaptive ecosystem engineering capacity to adjust to changing environmental conditions (Jones et al., 1994, 1997). Their natural regeneration and sediment trapping capacity enables mangroves to (1) stabilise shorelines (Krauss et al., 2014; Woodroffe et al., 2016), (2) recover from impacts of extreme events (Krauss and Osland, 2020), and (3) adapt to longer-term changes in environmental conditions (Schuerch et al., 2018; Saintilan et al., 2020). Hence, mangroves have the potential to offer a shoreline-stabilising, impact-resilient and climate-adaptive strategy to reduce coastal flood risk. In doing so, mangroves can provide additional values for society while implementation and maintenance costs could be substantially lower compared to hard-engineering infrastructure (Borsje et al., 2011; Narayan et al., 2016).</p>
+<p>Coastal flood risk management requires reliable systems providing a predictable functionality with a well-defined persistence. However, the functionality of mangroves is highly non-linear in relation to forest width (Koch et al., 2009; Montgomery et al., 2019). Also, their persistence is limited by critical thresholds: mangroves may collapse when either impacts of extreme events (Sippo et al., 2018; Krauss and Osland, 2020), or changes in environmental conditions exceed their natural tolerance (Friess et al., 2012). Such non-linearities and thresholds to mangrove functionality and persistence complicate efforts to incorporate mangroves into coastal flood protection projects. This way, mangroves bring uncertainty into a situation where failure could endanger lives and livelihoods.</p>
+<p>There is a fundamental difference in the variability and uncertainty of functionality and persistence between hard-engineering infrastructure and mangroves (Figure 1). This difference necessitates an adaptive management approach. Successful design and implementation of mangroves to reduce coastal flood risk requires (1) a mechanistic understanding of mangrove functionality and persistence, (2) accurate assessments of mangrove functionality and persistence, and (3) identification of design alternatives to enhance mangrove functionality or persistence. For conventional hard-engineering structures, mechanistic understanding, tools and interventions have been addressed and distilled in design guidelines that have been widely applied to manage coastal flood risk (USACE, 2001). By contrast, practical engineering and design guidelines for flood risk reduction using mangroves, or other NbS, based on a mechanistic understanding of these systems, have not yet been developed. This review aims at providing a comprehensive overview of the context and processes that determine mangrove functionality and persistence, which will allow for the definition, quantification and monitoring of locally suitable critical success factors for the implementation of mangroves to reduce coastal flood risk.</p>
+<p>The review discusses the functionality and persistence of mangroves from the perspective of coastal flood risk reduction. Firstly, we discuss field evidence for, and the mechanistics of, mangrove functionality and persistence. Secondly, we present field monitoring and remote sensing techniques to monitor mangrove functionality and persistence. Thirdly, we discuss modelling tools that can aid in assessing and predicting the functionality and persistence of mangroves. Fourthly, we provide an overview of available guidelines for engineering and management with mangroves and provide an operationalization of these guidelines following the functionality and persistence approach and the evidence and tools discussed before. Before the conclusion, we discuss remaining challenges that require further study to be able to proceed to practical engineering and management strategies to reduce coastal flood risk with mangroves.</p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapters"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="0_3_toc.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Table of Contents</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="02_wave_attenuation.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">02: Wave attenuation</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Rik Gijsman
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
