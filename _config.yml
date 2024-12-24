@@ -4,7 +4,7 @@
 title: Engineering with Mangroves
 author: Rik Gijsman
 copyright: "2024"
-logo: logo.jpg
+logo: logo.png
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
